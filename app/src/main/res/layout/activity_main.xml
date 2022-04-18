@@ -4,44 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgrm1"
-    tools:context=".MainActivity" >
-
-    <ImageView
-        android:id="@+id/key"
-        android:layout_width="75dp"
-        android:layout_height="95dp"
-        android:onClick="clickKey"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93"
-        app:srcCompat="@drawable/keyrm1" />
-
-    <ImageView
-        android:id="@+id/carpet"
-        android:layout_width="463dp"
-        android:layout_height="88dp"
-        android:onClick="hideCarpet"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.90999997"
-        app:srcCompat="@drawable/carpetrm1" />
+    android:background="@drawable/room1background"
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="365dp"
-        android:layout_height="90dp"
+        android:layout_width="400dp"
+        android:layout_height="227dp"
         android:onClick="clickDoor"
-        android:rotation="89"
-        android:rotationX="-2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/carpetrm1" />
+        app:layout_constraintVertical_bias="0.19999999"
+        app:srcCompat="@drawable/door" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+        <ImageView
+            android:id="@+id/key"
+            android:layout_width="75dp"
+            android:layout_height="95dp"
+            android:layout_gravity="center"
+            android:onClick="clickKey"
+            app:srcCompat="@drawable/key" />
+
+        <ImageView
+            android:id="@+id/carpet"
+            android:layout_width="463dp"
+            android:layout_height="88dp"
+            android:onClick="hideCarpet"
+            app:srcCompat="@drawable/carpet" />
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
