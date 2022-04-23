@@ -2,8 +2,73 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background3"
+    android:onClick="detonateBomb"
     tools:context=".MainActivity3">
 
+    <ImageView
+        android:id="@+id/shield"
+        android:layout_width="123dp"
+        android:layout_height="107dp"
+        android:onClick="getShield"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.276"
+        app:srcCompat="@drawable/sheild" />
+
+    <ImageView
+        android:id="@+id/door"
+        android:layout_width="183dp"
+        android:layout_height="257dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/door3" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="232dp"
+        android:layout_height="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.79"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26999998">
+
+        <ImageView
+            android:id="@+id/bomb"
+            android:layout_width="72dp"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom|clip_horizontal|clip_vertical|end"
+            android:layout_marginBottom="10dp"
+            android:onClick="getBomb"
+            app:srcCompat="@drawable/bomb" />
+
+        <ImageView
+            android:id="@+id/closet"
+            android:layout_width="218dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:onClick="closetOpen"
+            app:srcCompat="@drawable/closetclosed" />
+
+        <ImageView
+            android:id="@+id/lighter"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginBottom="18dp"
+            android:onClick="getLighter"
+            app:srcCompat="@drawable/lighter" />
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

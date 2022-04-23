@@ -40,7 +40,7 @@
             android:id="@+id/carpet"
             android:layout_width="463dp"
             android:layout_height="88dp"
-            android:onClick="hideCarpet"
+            android:onClick="liftCarpet"
             app:srcCompat="@drawable/carpet" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
