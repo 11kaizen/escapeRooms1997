@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -36,6 +37,8 @@ public class MainActivity3 extends AppCompatActivity {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     public void closetOpen(View view) {
+        mediaPlayer = MediaPlayer.create(this,R.raw.open_door);
+        mediaPlayer.start();
         if(closet.getDrawable().getConstantState().equals(getResources().getDrawable(R.drawable.closetclosed).getConstantState())){
             closet.setImageDrawable(getResources().getDrawable(R.drawable.closetopen,getTheme()));
             if(!hasLighter){lighter.setVisibility(View.VISIBLE);}
@@ -71,8 +74,14 @@ public class MainActivity3 extends AppCompatActivity {
             ConstraintLayout constraintLayout = findViewById(R.id.parentConstraintLayout);
             constraintLayout.setBackground(getResources().getDrawable(R.drawable.background3explosion));
 
-            Intent intent = new Intent(this, MainActivity5.class);
-            startActivity(intent);
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(MainActivity3.this,MainActivity5.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
+                }
+            }, 1000);
         }
     }
 

@@ -22,16 +22,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void liftCarpet(View view) {
         ImageView carpet = findViewById(R.id.carpet);
-        carpet.setImageDrawable(getResources().getDrawable(R.drawable.carpetrolledup,getTheme()));
+        carpet.setImageDrawable(getResources().getDrawable(R.drawable.carpetrolledup,getTheme())); // replace carpet with rolled up carpet
         ImageView key = findViewById(R.id.key);
+        key.bringToFront();  //Bring key on top in frame layout
+        key.setX(150f);
+        //Sound player
         mediaPlayer = MediaPlayer.create(this,sounds[2]);
         mediaPlayer.start(); //Play sound
-        key.bringToFront();
-        key.setX(150f);
     }
 
     public void clickKey(View view) {
         hasKey = true;
+        //Sound Player
         mediaPlayer = MediaPlayer.create(this,sounds[3]);
         mediaPlayer.start();  //Play sound
         ImageView key = findViewById(R.id.key);

@@ -32,7 +32,7 @@ public class MainActivity2 extends AppCompatActivity {
         sunDial = findViewById(R.id.sunDial);
         sunDial.setRotation(0f);
         mediaPlayer = MediaPlayer.create(this,sounds[1]);
-        mediaPlayer.start();
+        mediaPlayer.start(); // Play sound
         dialClick = true;
         if (dialClick && mirrorShift){
             dispPodiumBeam();
@@ -44,7 +44,7 @@ public class MainActivity2 extends AppCompatActivity {
         mirror.setX(191f);
         mirror.setY(150f);
         mediaPlayer = MediaPlayer.create(this,sounds[2]);
-        mediaPlayer.start();
+        mediaPlayer.start();// Play sound
         mirrorShift = true;
         if (dialClick && mirrorShift){
             dispPodiumBeam();

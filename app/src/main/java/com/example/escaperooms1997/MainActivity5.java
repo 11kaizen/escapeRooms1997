@@ -18,9 +18,9 @@ public class MainActivity5 extends AppCompatActivity {
     }
 
     public void endGame(View view){
-        finishAffinity();
         Intent intent = new Intent(this, bgMusic.class);
         stopService(intent);
+        finishAffinity(); //close everything
     }
 
 

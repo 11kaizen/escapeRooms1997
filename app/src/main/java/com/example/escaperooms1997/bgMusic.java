@@ -18,15 +18,14 @@ public class bgMusic extends Service {
     public void onCreate()
     {
         mp = MediaPlayer.create(this, R.raw.intro_song);
-        mp.setLooping(false);
+        mp.setLooping(true);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId){
-        //Log.d(tag, "On start");
         mp.start();
         mp.setVolume(0.3f,0.3f);
-        return START_NOT_STICKY;
+        return START_STICKY;
     }
     @Override
     public void onDestroy()
