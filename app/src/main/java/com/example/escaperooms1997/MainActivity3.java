@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -69,6 +70,9 @@ public class MainActivity3 extends AppCompatActivity {
             closet.setVisibility(View.INVISIBLE);
             ConstraintLayout constraintLayout = findViewById(R.id.parentConstraintLayout);
             constraintLayout.setBackground(getResources().getDrawable(R.drawable.background3explosion));
+
+            Intent intent = new Intent(this, MainActivity5.class);
+            startActivity(intent);
         }
     }
 

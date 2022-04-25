@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         ImageView carpet = findViewById(R.id.carpet);
         carpet.setImageDrawable(getResources().getDrawable(R.drawable.carpetrolledup,getTheme()));
         ImageView key = findViewById(R.id.key);
-//        mediaPlayer = MediaPlayer.create(this,sounds[2]);
-//        mediaPlayer.start(); //Play sound
+        mediaPlayer = MediaPlayer.create(this,sounds[2]);
+        mediaPlayer.start(); //Play sound
         key.bringToFront();
         key.setX(150f);
     }
