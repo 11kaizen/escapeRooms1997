@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+//This is the final activity in the game
 public class MainActivity5 extends AppCompatActivity {
     private ConstraintLayout constraintLayout;
 
@@ -19,8 +20,8 @@ public class MainActivity5 extends AppCompatActivity {
 
     public void endGame(View view){
         Intent intent = new Intent(this, bgMusic.class);
-        stopService(intent);
-        finishAffinity(); //close everything
+        stopService(intent); // Stops the service that runs the background music.
+        finishAffinity(); //terminates the app
     }
 
 

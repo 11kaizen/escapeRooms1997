@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+// This class holds the functionality of the third room in the game
 public class MainActivity3 extends AppCompatActivity {
     private ImageView closet, lighter, shield, bomb, door;
     private boolean hasShield, hasLighter, hasBomb;
@@ -35,10 +36,12 @@ public class MainActivity3 extends AppCompatActivity {
 
     }
 
+    // This method handles the changes that take place when the closet is clicked
     @SuppressLint("UseCompatLoadingForDrawables")
     public void closetOpen(View view) {
         mediaPlayer = MediaPlayer.create(this,R.raw.open_door);
         mediaPlayer.start();
+        // The conditional checks the current state of the closet image view and then makes changes accordingly
         if(closet.getDrawable().getConstantState().equals(getResources().getDrawable(R.drawable.closetclosed).getConstantState())){
             closet.setImageDrawable(getResources().getDrawable(R.drawable.closetopen,getTheme()));
             if(!hasLighter){lighter.setVisibility(View.VISIBLE);}
@@ -64,6 +67,7 @@ public class MainActivity3 extends AppCompatActivity {
         hasBomb = true;
     }
 
+    //This method concludes the final room.
     public void detonateBomb(View view){
         if(hasShield && hasLighter && hasBomb){
             mediaPlayer = MediaPlayer.create(this,R.raw.explosion);
@@ -74,6 +78,7 @@ public class MainActivity3 extends AppCompatActivity {
             ConstraintLayout constraintLayout = findViewById(R.id.parentConstraintLayout);
             constraintLayout.setBackground(getResources().getDrawable(R.drawable.background3explosion));
 
+            //Delays the running of the code by 1000ms
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override

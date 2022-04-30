@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+// This class handles the functionality of the first room in the game.
 public class MainActivity extends AppCompatActivity {
     private boolean hasKey;
     private int[] sounds = {R.raw.metal_door,R.raw.open_door,R.raw.ruglift,R.raw.ding}; //holds sounds id's
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickDoor(View view) {
         if(hasKey){
+            // Allows user to go to the next room in the game sequence.
             Intent intent = new Intent(this, MainActivity2.class);
             startActivity(intent);
             mediaPlayer = MediaPlayer.create(this,sounds[1]);

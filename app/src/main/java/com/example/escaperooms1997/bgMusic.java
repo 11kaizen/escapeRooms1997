@@ -5,9 +5,10 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 
+// This class handles the music that plays in the background as the user plays the game.
 public class bgMusic extends Service {
+    private MediaPlayer mp;
 
-    MediaPlayer mp;
     @Override
     public IBinder onBind(Intent intent) {
         // TODO Auto-generated method stub

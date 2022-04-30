@@ -12,8 +12,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
+//This class holds the functionality of the second room of the game
 public class MainActivity2 extends AppCompatActivity {
-    private int[] sounds = {R.raw.metal_door, R.raw.dial_move, R.raw.mirror_pickup, R.raw.level2complete};
+    private int[] sounds = {R.raw.metal_door, R.raw.dial_move, R.raw.mirror_pickup, R.raw.level2complete}; //holds sounds id's
     private MediaPlayer mediaPlayer;
     private boolean dialClick, mirrorShift;
     private ImageView podiumAndBeam,sunDial,mirror;
@@ -30,7 +31,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     public void dialTurn(View view) {
         sunDial = findViewById(R.id.sunDial);
-        sunDial.setRotation(0f);
+        sunDial.setRotation(0f);//sets the barrel into an upright position
         mediaPlayer = MediaPlayer.create(this,sounds[1]);
         mediaPlayer.start(); // Play sound
         dialClick = true;
@@ -61,22 +62,23 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 
+    // This method is initiated when both the mirror and barrel are in position.
     public void dispPodiumBeam(){
         mediaPlayer = MediaPlayer.create(this,sounds[3]);
-        System.out.println(mediaPlayer.getDuration());
         mediaPlayer.start();
+        // This section delays running the code so that the sound and the image happen at around the same time.
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 ImageView sunBeam = findViewById(R.id.winSunBeam);
                 ImageView doorUnlit = findViewById(R.id.doorUnlit);
-                sunDial.setVisibility(View.INVISIBLE);
+                sunDial.setVisibility(View.INVISIBLE); //hide image
                 mirror.setVisibility(View.INVISIBLE);
                 podiumAndBeam.setVisibility(View.VISIBLE);
                 sunBeam.setVisibility(View.INVISIBLE);
                 doorUnlit.setImageDrawable(getResources().getDrawable(R.drawable.doorlit,getTheme()));
             }
-        }, 4000);
+        }, 4000); //the delay duration
     }
 }
